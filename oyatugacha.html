@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>今日のおやつガチャ</title>
+    <style>
+        /* CSS: 見た目を整える */
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #fff4e0; /* 柔らかい背景色 */
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #ff9800; }
+        #result {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 1.5em;
+            color: #333;
+        }
+        button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #e68a00;
+            transform: scale(1.1); /* 少し大きくする */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>今日のおやつガチャ</h1>
+        <p>ボタンを押して運命のおやつを決めよう！</p>
+        
+        <div id="result">？？？</div>
+        
+        <button onclick="gacha()">ガチャを回す</button>
+    </div>
+
+    <script>
+        // JavaScript: 動きを作る
+        function gacha() {
+            // 1. おやつのリスト（配列）
+            const snacks = ["チョコレート", "ポテトチップス", "ショートケーキ", "せんべい", "アイスクリーム", "ドーナツ", "クッキー"];
+            
+            // 2. ランダムな番号を選ぶ
+            const randomIndex = Math.floor(Math.random() * snacks.length);
+            
+            // 3. 画面の「result」の部分を書き換える
+            const resultElement = document.getElementById("result");
+            resultElement.innerText = snacks[randomIndex];
+            
+            // ちょっとした演出
+            resultElement.style.color = "#ff5722";
+        }
+    </script>
+</body>
+</html>
