@@ -1,0 +1,16 @@
+/* アニメーションの定義 */
+@keyframes pop-up {
+    0% {
+        transform: scale(0.5); /* 最初は半分くらいの大きさ */
+        opacity: 0;            /* 透明 */
+    }
+    100% {
+        transform: scale(1);   /* 元の大きさ */
+        opacity: 1;            /* 不透明 */
+    }
+}
+
+/* アニメーションを適用するためのクラス */
+.animate {
+    animation: pop-up 0.5s ease-out; /* 0.5秒かけて実行 */
+}
